@@ -249,7 +249,10 @@ footer{
   background-color: #e8b0b0;
 }
 
-
+/* Style the blog page */
+#blog-title {
+  text-align: center;
+}
 
 
 
