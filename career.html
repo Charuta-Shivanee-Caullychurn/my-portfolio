@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career History - Charuta Shivanee Caullychurn</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="logo-container">
+    <a href="career.html">
+      <img src="images/logo.png" alt="Your Logo" class="logo">
+    </a>
+  </div>
+  <!-- Header & Navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="career.html">Career History</a></li>
+        <li><a href="blog.html">My Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <h1>Career History</h1>
+    
+    <!-- Timeline Section -->
+    <section class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2020 - Present</div>
+        <div class="timeline-content">
+          <h3>Senior Data Analyst at Company X</h3>
+          <p>Worked on data modeling, dashboard creation, and business analytics.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2018 - 2020</div>
+        <div class="timeline-content">
+          <h3>Data Analyst at Company Y</h3>
+          <p>Analyzed market trends and generated reports that influenced key decisions.</p>
+        </div>
+      </div>
+      <!-- Add more timeline items as needed -->
+    </section>
+
+    <!-- Additional Information Section with Tabs -->
+    <section class="additional-info">
+      <h2>More About My Journey</h2>
+      <div class="tabs">
+        <button class="tab-button" data-tab="education">Education</button>
+        <button class="tab-button" data-tab="coding">Coding Journey</button>
+        <button class="tab-button" data-tab="extra">Extra-Curricular Activities</button>
+        <button class="tab-button" data-tab="achievements">Achievements</button>
+      </div>
+      <div class="tab-content" id="education">
+        <h3>Education</h3>
+        <p>Details about my academic background, degrees, and certifications.</p>
+      </div>
+      <div class="tab-content" id="coding">
+        <h3>Coding Journey</h3>
+        <p>My path into coding—from early experiments to professional projects.</p>
+      </div>
+      <div class="tab-content" id="extra">
+        <h3>Extra-Curricular Activities</h3>
+        <p>Information about my interests and activities outside of work and study.</p>
+      </div>
+      <div class="tab-content" id="achievements">
+        <h3>Achievements</h3>
+        <p>Awards, recognitions, and major milestones throughout my career.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
+  </footer>
+
+  <!-- Simple JavaScript for Tabs -->
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tab = button.getAttribute('data-tab');
+        tabContents.forEach(content => {
+          content.style.display = content.id === tab ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Show the first tab by default
+    if (tabContents.length > 0) {
+      tabContents.forEach((content, index) => {
+        content.style.display = index === 0 ? 'block' : 'none';
+      });
+    }
+  </script>
+ 
+</body>
+</html>

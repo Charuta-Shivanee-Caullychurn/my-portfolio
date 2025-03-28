@@ -1,0 +1,266 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: linen;
+}
+
+main {
+  flex: 1;
+  padding-top: 100px /* This makes the main section expand to fill available space */
+}
+
+
+/* Header & Navigation Styling */
+header {
+  background-color: linear-gradient(to bottom, #f5f5f5, #ffffff);
+  padding: 20px ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
+}
+
+/* Position the navigation at the top right */
+header nav {
+  display: flex;
+  justify-content: center; /* pushes nav items to the right */
+}
+
+/* Style the unordered list as a horizontal menu */
+header nav ul {
+  display: flex;
+  list-style: none; /* removes default bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+/* Add spacing between each menu item */
+header nav ul li {
+  margin-left: 20px;
+}
+
+/* Style the links */
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: transform 0.3s ease; /* smooth scaling effect */
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hover effect: scale up the link text */
+header nav ul li a:hover {
+  transform: scale(1.5);
+  color:#b500af;
+} 
+
+.logo-container{
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  z-index: 1000;
+
+}
+
+.logo{
+  width: 200px;
+  height: 200px;
+  padding: 0;
+}
+
+/* footer */
+footer{
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f5f5f5;
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+/*          HOME PAGE   */
+.hero-text{
+  position: fixed;            /* Fixes the element relative to the viewport */
+  top: 35%;                   /* Positions it 50% from the top */
+  left: 50%;                  /* Positions it 50% from the left */
+  transform: translate(-50%, -50%); /* Centers it perfectly */
+  text-align: center;         /* Centers text within the container */
+  z-index: 1000;              
+}
+
+.profile-pic {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 0;
+  padding: 0;
+} 
+
+.hero-text h1{
+  margin-top: -50px;
+  margin-bottom:10px;
+}
+
+
+
+/*        ABOUT PAGE        */
+/* About Section Boxes */
+.about-section {
+  max-width: 800px;          /* Limits the width for readability */
+  margin: 20px auto;         /* Centers the box and adds vertical spacing */
+  padding: 20px;             /* Space inside the box */
+  border: 1px solid #ccc;    /* Light border for definition */
+  border-radius: 8px;        /* Rounded corners */
+  background-color: #fff;    /* White background for contrast */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow for depth */
+}
+
+.about-section h2 {
+  margin-top: 0;             /* Remove extra top margin */
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.about-section p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+#about-title{
+  position: relative;
+  text-align: center;
+  top: -25px;
+}
+
+
+
+/*          CONTACT PAGE */
+  /* Center the entire contact-info section */
+.contact-info {
+  text-align: center;
+  margin-top: 40px 0;
+
+}
+
+  /* Style the heading */
+.contact-info h2 {
+  font-size: 24px;  /* Adjust the size as needed */
+  margin-bottom: 20px;
+}
+
+  /* Arrange social links horizontally */
+
+.social-links {
+  display: flex;            /* Use flexbox to align items */
+  justify-content: center;  /* Center the items horizontally */
+  list-style: none;         /* Remove bullet points */
+  padding: 0;
+  margin: 20px 0;
+}
+
+  /* Add spacing between each social media link */
+.social-links li {
+  margin: 0 15px; /* Adjust spacing as needed */
+}
+
+  /* Optional: Style the links for better visual appeal */
+.social-links li a i {
+  font-size: 40px;
+  color: #333;
+  transition: all transform 0.9s ease-in-out, color 0.9s ease-in-out;
+}
+
+.social-links li a i:hover {
+  transform: scale(1.2) !important;
+  color: #b500af !important;  
+  /* Slight zoom on hover */
+} 
+
+.contact-form{
+  max-width: 600px;
+  margin:0 auto 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;              /* Even spacing between form groups */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0077b5;
+  box-shadow: 0 0 5px rgba(0, 119, 181, 0.5);
+}
+
+/* Style the submit button */
+.contact-form button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #edbebe;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Centers the button */
+  min-width: 150px;
+}
+
+.contact-form button:hover {
+  background-color: #e8b0b0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
