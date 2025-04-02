@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Website - Home</title>
-  <!-- You can link your CSS file here later -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
+
   <div class="logo-container">
     <a href="blog.html">
       <img src="images/logo.png" alt="Your Logo" class="logo">
     </a>
   </div>
+
   <!-- Header & Navigation -->
   <header>
     <nav>
@@ -21,7 +21,6 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         
-        <li><a href="skills.html">Skills</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="career.html">Career History</a></li>
         <li><a href="blog.html">My Blog</a></li>
@@ -30,18 +29,34 @@
     </nav>
   </header>
 
-  <!-- Main Content Area -->
+  <!-- Main Blog Section -->
   <main>
     <h1 id="blog-title">My Blog</h1>
-    
 
-    <!-- Additional content can go here -->
+    <div class="blog-container">
+      <!-- Example Blog Post -->
+      <div class="blog-card" onclick="openBlog('https://medium.com/@shivanycaully/to-everyone-who-feels-like-theyll-never-get-coding-this-is-for-you-d32a60d7e015')">
+        <img src="/Users/charu/Downloads/blog1.jpg">
+        <h2>To Everyone Who Feels Like They'll Never Get Coding- This Is For You</h2>
+        <p></p>
+      </div>
+
+      <div class="blog-card" onclick="openBlog('https://medium.com/your-second-article-link')">
+        <img src="images/blog2.jpg" alt="Blog Image">
+        <h2>Coming Soon</h2>
+        <p>Stay tuned for more blog posts!</p>
+      </div>
+
+      <!-- Add more blog cards as needed -->
+    </div>
   </main>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
   </footer>
- 
+
+  <script src="script.js"></script> <!-- Link JavaScript file -->
 </body>
 </html>
+
