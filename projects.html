@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Website - Home</title>
-  <!-- You can link your CSS file here later -->
+  <title>Project</title>
+  
    <link rel="stylesheet" href="style.css">
-   <script src="script.js" defer></script>
+   
 </head>
 <body>
   <div class="logo-container">
@@ -31,9 +31,20 @@
 
   <!-- Main Content Area -->
   <main>
-    <h1>Projects</h1>
-    <h2>Data Analyst Enthusiast| Aspiring Front-End Developer|</h2>
-    <p>This is the Home page where you'll introduce yourself and give a quick overview of your work.</p>
+    <h1 id="project-title">Projects</h1>
+
+    <div class="project-card" onclick="openBlog('https://medium.com/@shivanycaully/to-everyone-who-feels-like-theyll-never-get-coding-this-is-for-you-d32a60d7e015')">
+      <img src="images/blog1.jpg">
+      <h2>Portfolio</h2>
+      <p>Tech Stack: HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="project-card" onclick="openBlog('https://medium.com/your-second-article-link')">
+      <img src="images/blog2.jpg">
+      <h2>Simulation for fruit factory</h2>
+      <p>Tech Stack: Java, Concurrency concepts</p>
+    </div>
+    
     <!-- Additional content can go here -->
   </main>
 
@@ -41,6 +52,6 @@
   <footer>
     <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
   </footer>
-  
+  <script src="script.js"></script> 
 </body>
 </html>
