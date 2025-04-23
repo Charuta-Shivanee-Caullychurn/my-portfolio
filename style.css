@@ -59,19 +59,9 @@ header nav ul li a:hover {
   color:#b500af;
 } 
 
-.logo-container{
-  position: absolute;
-  top: 20px;
-  left: -10px;
-  z-index: 1000;
 
-}
 
-.logo{
-  width: 200px;
-  height: 200px;
-  padding: 0;
-}
+
 
 /* footer */
 footer{
