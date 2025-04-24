@@ -27,8 +27,12 @@ header {
 /* Position the navigation at the top right */
 header nav {
   display: flex;
-  justify-content: center; /* pushes nav items to the right */
+  justify-content: space-between; /* pushes nav items to the right */
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 40px;
 }
+
 
 /* Style the unordered list as a horizontal menu */
 header nav ul {
@@ -59,12 +63,33 @@ header nav ul li a:hover {
   color:#b500af;
 } 
 
-.logo{
-  height: 50px;
-  width: auto;
-  margin-left: 2000px;
-  padding: 5px 0; 
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #746d6d;
+  margin-right: auto; /* Push nav menu to the right */
+  padding-left: 20px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
 }
+
+.logo span {
+  color: #333; /* Add a little flair with different color */
+}
+
+.emoji {
+  margin-left: 4px;
+  font-size: 20px;
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+
 
 
 
