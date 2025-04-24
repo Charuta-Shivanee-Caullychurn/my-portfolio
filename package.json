@@ -16,8 +16,8 @@
     "url": "https://github.com/Charuta-Shivanee-Caullychurn/my-portfolio/issues"
   },
   "homepage": "https://github.com/Charuta-Shivanee-Caullychurn/my-portfolio#readme",
-  "description": "",
   "devDependencies": {
     "tailwindcss": "^4.1.4"
-  }
+  },
+  "description": ""
 }
