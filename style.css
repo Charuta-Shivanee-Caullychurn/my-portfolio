@@ -59,6 +59,12 @@ header nav ul li a:hover {
   color:#b500af;
 } 
 
+.logo{
+  height: 50px;
+  width: auto;
+  margin-left: 2000px;
+  padding: 5px 0; 
+}
 
 
 
