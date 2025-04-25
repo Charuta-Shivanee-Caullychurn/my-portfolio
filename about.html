@@ -32,16 +32,16 @@
 
   <!-- Main Content Area -->
   <main>
-    <h1 id="about-title">Behind the Screens: A Bit About Me and My Journey</h1>
+    <h1 id="about-title"><span class="typewriter-text"></span></h1>
+
 
     <!--section: this is moi-->
     <section class="about-section" id="this-is-me">
       <h2>The Short Version of My Life Story</h2>
-      <p>Hey there! As you probably know by now, my name is Charuta Shivanee, but most people call me <b>Charu</b>(because, let's be real, it's easier).  I was born and raised on the beautiful island of Mauritius—yep, that tiny dot in the middle of the Indian Ocean.</p>
-      <p>Right now, I’m living in <b>Malaysia</b>, pursuing a <b>Bachelor’s degree in Computer Science</b> with a specialisation in </b>Data Analytics</b>. I've always been fascinated by <b>statistics</b> and the way data shapes the world. I mean, <b>data</b> is infinite—it just keeps growing and evolving. So, in a way, you could say I’m studying this out of pure curiosity (and maybe a little obsession, haha).</p>
-      <p>A fun fact? I’m a Gen Z kid through and through. Which means I spend countless hours watching reels, equally countless hours learning new programming languages, and somehow balancing it all while trying to turn my passion into a career. As a woman in tech, I know I have to push harder to carve out my place—but hey, I got this, right? 😏</p>
-      <p>My life motto? "To try my best so I can never blame myself for anything." Just trusting God and myself to carve out a good life—hah!</p>
-      <!--<p>And finally, shoutout to my loving and supportive parents, my sister, my uncle from Canada, and a special thought to my best friend from India—the real ones who never stopped believing in me and my potential. 💙</p>-->
+      <p>Hey there 👋🏽, I’m Charuta Shivanee—commonly known as Charu.</p>
+      <p>I have a strong interest in data cleaning, analysis, and deriving insights that drive meaningful decisions. Passionate about transforming raw data into structured, actionable outcomes, I aim to bridge the gap between information and impact.</p>
+      <p>I believe in consistency, curiosity, and doing my best—always. With a growing foundation in tech and a data-driven mindset, I'm committed to contributing to solutions that matter.</p>
+    
     </section>
 
     <!--Experience
@@ -185,6 +185,39 @@
   <footer>
     <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
   </footer>
+
+  <script>
+    const text = "Behind the Screens: A Bit About Me and My Journey";
+    const typewriterElement = document.querySelector('.typewriter-text');
+    let index = 0;
+  
+    function type() {
+      if (index < text.length) {
+        typewriterElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 70); // Adjust speed here
+      }
+    }
+  
+    window.addEventListener("load", type);
+  </script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.about-section', {
+      scale: 0.8,           // starts at 80% size
+      duration: 1000,
+      delay: 200,
+      easing: 'ease-in-out',
+      distance: '0px',      // no slide, just zoom
+      origin: 'bottom',
+      reset: true           // replays on scroll up
+    });
+  </script>
+  
+  
+  
+
+  
   
 </body>
 </html>
