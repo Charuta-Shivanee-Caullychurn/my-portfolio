@@ -6,6 +6,8 @@
     <title>Charuta Shivanee — Career History</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -77,7 +79,7 @@
             <!-- Timeline Item -->
             <div class="mb-10 ml-6">
                 <span class="absolute w-4 h-4 bg-teal rounded-full mt-1.5 -left-3 border-2 border-white"></span>
-                <div class="bg-white bg-opacity-40 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white">
+                <div class="bg-white bg-opacity-40 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white" data-aos="fade-up">
                     <time class="text-sm font-semibold text-teal">Dec 2024 &mdash; Mar 2025</time>
                     <h2 class="text-xl font-semibold text-darknavy mt-2">Intern — West Malayan Group Sdn Bhd (Malaysia)</h2>
                     <p class="mt-2 text-gray-700">Contributed to digital transformation and analytics-driven decision-making. Automated reporting pipelines and optimized file storage processes to improve efficiency and data accessibility.</p>
@@ -91,5 +93,9 @@
     <footer class="py-6 text-center text-gray-600 text-sm">
         &copy; 2025 Charuta Shivanee. All rights reserved.
     </footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 500, once: true });
+    </script>
 </body>
 </html>

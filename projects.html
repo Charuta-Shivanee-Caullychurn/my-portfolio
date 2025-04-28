@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Charuta Shivanee — Projects</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+          rel="stylesheet" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <script>
         tailwind.config = {
             theme: {
@@ -26,17 +29,15 @@
     </script>
 </head>
 <body class="bg-gradient-to-br from-beige via-softwhite to-mauve font-sans text-gray-800 min-h-screen">
-    <!-- Navigation -->
+    <!-- Navigation (same component) -->
     <header class="fixed top-0 left-0 w-full z-50">
         <nav class="flex items-center justify-between px-6 py-4 bg-darknavy bg-opacity-90 backdrop-blur-md shadow-lg">
             <a href="index.html" class="text-2xl font-bold text-white tracking-wider">
                 Charu<span class="ml-1 animate-pulse inline-block">👩🏽‍💻</span>
             </a>
             <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
             <ul id="menu" class="hidden md:flex space-x-6">
@@ -48,9 +49,7 @@
                 <li><a href="contact.html" class="text-white hover:text-teal transition">Contact</a></li>
             </ul>
         </nav>
-        <!-- Mobile Menu (collapsed by default) -->
-        <div id="mobile-menu"
-             class="transform origin-top scale-y-0 transition-transform duration-300 md:hidden">
+        <div id="mobile-menu" class="transform origin-top scale-y-0 transition-transform duration-300 md:hidden">
             <ul class="bg-darknavy bg-opacity-90 backdrop-blur-md p-4 space-y-2">
                 <li><a href="index.html" class="block text-white hover:text-teal transition">Home</a></li>
                 <li><a href="about.html" class="block text-white hover:text-teal transition">About</a></li>
@@ -62,21 +61,16 @@
         </div>
     </header>
 
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('scale-y-100');
-        });
-    </script>
-
-
     <!-- Projects Grid -->
     <main class="pt-32 pb-16 max-w-7xl mx-auto px-6">
-        <h1 class="text-4xl font-extrabold text-darknavy text-center mb-12">My Projects</h1>
+        <h1 class="text-4xl font-extrabold text-darknavy text-center mb-12" data-aos="fade-down">
+            My Projects
+        </h1>
         <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <!-- Project Card 1 -->
-            <div class="group bg-white bg-opacity-50 backdrop-blur-lg border border-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+            <div class="group bg-white bg-opacity-50 backdrop-blur-lg border border-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+                 data-aos="fade-up"
+                 data-aos-delay="100">
                 <img src="images/blog1.jpg"
                      alt="Portfolio Project"
                      class="w-full h-48 object-cover" />
@@ -85,11 +79,15 @@
                     <p class="text-gray-700 mb-4">Tech Stack: HTML, CSS, JavaScript, TailwindCSS</p>
                     <a href="https://github.com/Charuta-Shivanee-Caullychurn/my-portfolio"
                        target="_blank"
-                       class="inline-block px-4 py-2 bg-teal text-white font-medium rounded-full hover:bg-teal/80 transition">View Code</a>
+                       class="inline-block px-4 py-2 bg-teal text-white font-medium rounded-full hover:bg-teal/80 transition"
+                       data-aos="zoom-in"
+                       data-aos-delay="200">View Code</a>
                 </div>
             </div>
             <!-- Project Card 2 -->
-            <div class="group bg-white bg-opacity-50 backdrop-blur-lg border border-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+            <div class="group bg-white bg-opacity-50 backdrop-blur-lg border border-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+                 data-aos="fade-up"
+                 data-aos-delay="200">
                 <img src="images/blog2.jpg"
                      alt="Fruit Factory Simulation"
                      class="w-full h-48 object-cover" />
@@ -98,10 +96,12 @@
                     <p class="text-gray-700 mb-4">Tech Stack: Java, Concurrency Concepts</p>
                     <a href="https://github.com/Charuta-Shivanee-Caullychurn/Fruit_Factory-Simulation"
                        target="_blank"
-                       class="inline-block px-4 py-2 bg-teal text-white font-medium rounded-full hover:bg-teal/80 transition">View Code</a>
+                       class="inline-block px-4 py-2 bg-teal text-white font-medium rounded-full hover:bg-teal/80 transition"
+                       data-aos="zoom-in"
+                       data-aos-delay="300">View Code</a>
                 </div>
             </div>
-            <!-- Add more project cards as needed -->
+            <!-- Additional cards... -->
         </div>
     </main>
 
@@ -109,5 +109,22 @@
     <footer class="py-6 text-center text-gray-600 text-sm">
         &copy; 2025 Charuta Shivanee. All rights reserved.
     </footer>
+
+    <!-- AOS Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 500,
+            once: true
+        });
+    </script>
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('scale-y-100');
+        });
+    </script>
 </body>
 </html>

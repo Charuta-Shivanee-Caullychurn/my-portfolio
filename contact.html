@@ -6,6 +6,8 @@
     <title>Charuta Shivanee — Contact</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -15,20 +17,20 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              beige: '#f7f1e1',
-              mauve: '#d7c1e0',
-              teal: '#2ca58d',
-              darknavy: '#1a1a2e',
-              softwhite: '#fdfcfb'
-            },
-            fontFamily: { sans: ['Poppins', 'sans-serif'] }
-          }
-        }
-      };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beige: '#f7f1e1',
+                        mauve: '#d7c1e0',
+                        teal: '#2ca58d',
+                        darknavy: '#1a1a2e',
+                        softwhite: '#fdfcfb'
+                    },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
+                }
+            }
+        };
     </script>
 </head>
 <body class="bg-gradient-to-br from-beige via-softwhite to-mauve font-sans text-gray-800 min-h-screen">
@@ -81,7 +83,7 @@
         <h1 class="text-4xl font-extrabold text-darknavy text-center mb-12">Get in Touch</h1>
         <div class="grid gap-12 md:grid-cols-2">
             <!-- Social Media Card -->
-            <section class="bg-white bg-opacity-50 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white flex flex-col items-center">
+            <section class="bg-white bg-opacity-50 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white flex flex-col items-center" data-aos="zoom-in">
                 <h2 class="text-2xl font-semibold text-darknavy mb-6">Networking Starts Here</h2>
                 <ul class="flex space-x-6 mb-6">
                     <li>
@@ -114,7 +116,7 @@
             </section>
 
             <!-- Contact Form Card -->
-            <section class="bg-white bg-opacity-50 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+            <section class="bg-white bg-opacity-50 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white" data-aos="zoom-in" data-aos-delay="200">
                 <h2 class="text-2xl font-semibold text-darknavy mb-6 text-center">Send a Message</h2>
                 <form class="space-y-4">
                     <div>
@@ -164,5 +166,9 @@
     <footer class="py-6 text-center text-gray-600 text-sm">
         &copy; 2025 Charuta Shivanee. All rights reserved.
     </footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 500, once: true });
+    </script>
 </body>
 </html>
