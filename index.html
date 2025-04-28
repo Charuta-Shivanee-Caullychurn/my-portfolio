@@ -1,52 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Website - Home</title>
-  <!-- You can link your C-->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charuta Shivanee — Home</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beige: '#f7f1e1',
+                        mauve: '#d7c1e0',
+                        teal: '#2ca58d',
+                        darknavy: '#1a1a2e',
+                        softwhite: '#f9f9f9'
+                    },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
 </head>
-<body>
-  <div class="logo-container">
-    <a href="index.html">
-      <!--<img src="images/logo.png" alt="Your Logo" class="logo"> -->
-    </a>
-  </div>
-  <!-- Header & Navigation -->
-  <header>
-    <nav>
-      <div class="logo">Charu<span class="emoji">👩🏽‍💻</span></div>  
-      <ul>
-        
-        <li><a href="index.html">Home</a></li> 
-        <li><a href="about.html">About Me</a></li>
-        
-       
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="career.html">Career History</a></li>
-        <li><a href="blog.html">My Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>  
-  </header>
+<body class="bg-gradient-to-br from-beige via-softwhite to-mauve min-h-screen font-sans text-gray-800">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <nav class="flex items-center justify-between px-6 py-4 bg-darknavy bg-opacity-90 backdrop-blur-md shadow-lg">
+            <a href="index.html" class="text-2xl font-bold text-white tracking-wider">
+                Charu<span class="ml-1 animate-pulse inline-block">👩🏽‍💻</span>
+            </a>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="index.html" class="text-white hover:text-teal transition">Home</a></li>
+                <li><a href="about.html" class="text-white hover:text-teal transition">About</a></li>
+                <li><a href="projects.html" class="text-white hover:text-teal transition">Projects</a></li>
+                <li><a href="career.html" class="text-white hover:text-teal transition">Career</a></li>
+                <li><a href="blog.html" class="text-white hover:text-teal transition">Blog</a></li>
+                <li><a href="contact.html" class="text-white hover:text-teal transition">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Menu (collapsed by default) -->
+        <div id="mobile-menu" class="transform origin-top scale-y-0 transition-transform duration-300 md:hidden">
+            <ul class="bg-darknavy bg-opacity-90 backdrop-blur-md p-4 space-y-2">
+                <li><a href="index.html" class="block text-white hover:text-teal transition">Home</a></li>
+                <li><a href="about.html" class="block text-white hover:text-teal transition">About</a></li>
+                <li><a href="projects.html" class="block text-white hover:text-teal transition">Projects</a></li>
+                <li><a href="career.html" class="block text-white hover:text-teal transition">Career</a></li>
+                <li><a href="blog.html" class="block text-white hover:text-teal transition">Blog</a></li>
+                <li><a href="contact.html" class="block text-white hover:text-teal transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-  <!-- Main Content Area -->
-  <main>
-    <div class="hero-text">
-      <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
-      <h1>Charuta Shivanee Caullychurn</h1>
-      <h2>Data Analyst Enthusiast | Business Intelligence | Statistics | Aspiring Front End Developer</h2>
-    <!-- <p>This is the Home page where you'll introduce yourself and give a quick overview of your work.</p> -->
-    <!-- Additional content can go here -->
-     </div>
-  </main>
-  <!--this is to test github-->
+    <!-- Hero -->
+    <main class="pt-20 flex flex-col md:flex-row items-center justify-center">
+        <div class="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-16">
+            <!-- Text Block -->
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-darknavy">
+                    Hi, I’m Charuta Shivanee
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-gray-700 mb-8">
+                    Data Analyst Enthusiast | Business Intelligence | Statistics | Aspiring Front-End Developer
+                </p>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="contact.html" class="inline-block px-6 py-2 sm:px-8 sm:py-3 font-semibold rounded-full bg-teal text-white hover:bg-teal/80 transition">
+                        Get in Touch
+                    </a>
+                    <a href="resume.pdf" target="_blank" class="inline-block px-6 py-2 sm:px-8 sm:py-3 font-semibold rounded-full border-2 border-teal text-teal hover:bg-teal/10 transition">
+                        View Resume
+                    </a>
+                </div>
+            </div>
+            <!-- Image Block (circle with consistent sizing) -->
+            <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-white bg-opacity-20 backdrop-blur-lg border-4 border-white shadow-2xl">
+                <img src="images/profile.png" alt="Charuta Shivanee" class="absolute inset-0 w-full h-full object-cover object-center" />
+            </div>
+        </div>
+    </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
-  </footer>
- 
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-700 text-sm">
+        &copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('scale-y-100');
+        });
+    </script>
 </body>
 </html>
