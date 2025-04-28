@@ -1,223 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me</title>
-  <!-- You can link your CSS file here later -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charuta Shivanee — About Me</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        beige: '#f7f1e1',
+                        mauve: '#d7c1e0',
+                        teal: '#2ca58d',
+                        darknavy: '#1a1a2e',
+                        softwhite: '#fdfcfb'
+                    },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
 </head>
-<body>
-  <div class="logo-container">
-    <a href="about.html">
-      <!--<img src="images/logo_redesigned.png" alt="Your Logo" class="logo"> -->
-    </a>
-  </div>
-  <!-- Header & Navigation -->
-  <header>
-    <nav>
-      <div class="logo">Charu<span class="emoji">👩🏽‍💻</span></div> 
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="career.html">Career History</a></li>
-        <li><a href="blog.html">My Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav> 
-  </header>
-
-  <!-- Main Content Area -->
-  <main>
-    <h1 id="about-title"><span class="typewriter-text"></span></h1>
-
-
-    <!--section: this is moi-->
-    <section class="about-section" id="this-is-me">
-      <h2>The Short Version of My Life Story</h2>
-      <p>Hey there 👋🏽, I’m Charuta Shivanee—commonly known as Charu.</p>
-      <p>I have a strong interest in data cleaning, analysis, and deriving insights that drive meaningful decisions. Passionate about transforming raw data into structured, actionable outcomes, I aim to bridge the gap between information and impact.</p>
-      <p>I believe in consistency, curiosity, and doing my best—always. With a growing foundation in tech and a data-driven mindset, I'm committed to contributing to solutions that matter.</p>
-    
-    </section>
-
-    <!--Experience
-    <section class="about-section" id="experience">
-      <h2>Experience</h2>
-      <p>An overview of my professional journey, key roles, and responsibilities that have shaped my career.</p>
-    </section> -->
-
-    <!--Education -->
-    <section class="about-section" id="education">
-      <h2>Education</h2>
-      <div class="education-item">
-        <h3>Bachelor’s Degree in Computer Science (Data Analytics Specialization)</h3>
-        <p><strong>Institution:</strong> Asia Pacific University, Malaysia</p>
-        <p><strong>Duration:</strong> 2023 - 2026</p>
-        <p><strong>Relevant Coursework:</strong> Data Structures, Programming for Data Analytics, Data Mining and Predictive Modelling, Statistics, Databases, Object-Oriented Programming</p>
-      </div>
-    
-      <div class="education-item">
-        <h3>High School Diploma</h3>
-        <p><strong>Institution:</strong> Forest Side Academy, Mauritius (under University of Cambridge)</p>
-        <p><strong>Duration:</strong> 2017 - 2022</p>
-        <p><strong>Specialization:</strong> Commerce (Mathematics & Statistics, Economics, Accounting)</p>
-      </div>
-    </section>
-
-    
-    <!-- Skills Section -->
-<section class="about-section" id="skills">
-  <h2>Skills</h2>
-  <div class="skills-container">
-
-    <div class="skills-category">
-      <h3>Technical Skills</h3>
-      <div class="icon-grid">
-        <div class="skill-icon">
-          <i class="devicon-r-original"></i>
-          <span>R</span>
+<body class="bg-gradient-to-br from-beige via-softwhite to-mauve font-sans text-gray-800 min-h-screen">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <nav class="flex items-center justify-between px-6 py-4 bg-darknavy bg-opacity-90 backdrop-blur-md shadow-lg">
+            <a href="index.html" class="text-2xl font-bold text-white tracking-wider">
+                Charu<span class="ml-1 animate-pulse inline-block">👩🏽‍💻</span>
+            </a>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="index.html" class="text-white hover:text-teal transition">Home</a></li>
+                <li><a href="about.html" class="text-white hover:text-teal transition font-semibold underline">About</a></li>
+                <li><a href="projects.html" class="text-white hover:text-teal transition">Projects</a></li>
+                <li><a href="career.html" class="text-white hover:text-teal transition">Career</a></li>
+                <li><a href="blog.html" class="text-white hover:text-teal transition">Blog</a></li>
+                <li><a href="contact.html" class="text-white hover:text-teal transition">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Menu (collapsed by default) -->
+        <div id="mobile-menu"
+             class="transform origin-top scale-y-0 transition-transform duration-300 md:hidden">
+            <ul class="bg-darknavy bg-opacity-90 backdrop-blur-md p-4 space-y-2">
+                <li><a href="index.html" class="block text-white hover:text-teal transition">Home</a></li>
+                <li><a href="about.html" class="block text-white hover:text-teal transition">About</a></li>
+                <li><a href="projects.html" class="block text-white hover:text-teal transition">Projects</a></li>
+                <li><a href="career.html" class="block text-white hover:text-teal transition">Career</a></li>
+                <li><a href="blog.html" class="block text-white hover:text-teal transition">Blog</a></li>
+                <li><a href="contact.html" class="block text-white hover:text-teal transition">Contact</a></li>
+            </ul>
         </div>
-        <div class="skill-icon">
-          <i class="devicon-python-plain"></i>
-          <span>Python</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-java-plain"></i>
-          <span>Java</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-html5-plain"></i>
-          <span>HTML</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-css3-plain"></i>
-          <span>CSS</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-javascript-plain"></i>
-          <span>JavaScript</span>
-        </div>
-        <div class="skill-icon">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/SAS_logo.svg/512px-SAS_logo.svg.png" alt="SAS Studio" class="custom-icon">
-          <span>SAS</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-microsoftsqlserver-plain"></i>
-          <span>SQL</span>
-        </div>
-        <div class="skill-icon">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tableau.svg" alt="Tableau" class="custom-icon">
-          <span>Tableau</span>
-        </div>
-        <div class="skill-icon">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/powerbi.svg" alt="Power BI" class="custom-icon">
-          <span>Power BI</span>
-        </div>
-        <div class="skill-icon">
-          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftoffice.svg" alt="Microsoft Office" class="custom-icon">
-          <span>Office</span>
-        </div>
-        <div class="skill-icon">
-          <i class="devicon-mysql-plain"></i>
-          <span>Databases</span>
-        </div>
-      </div>
-    </div>
+    </header>
 
-    <div class="skills-category">
-      <h3>Soft Skills</h3>
-      <ul class="soft-skills">
-        <li>Teamwork</li>
-        <li>Independent Worker</li>
-        <li>Communication</li>
-        <li>Interpersonal Skills</li>
-        <li>Problem-solving</li>
-        <li>Time Management</li>
-        <li>Adaptability</li>
-        <li>Critical Thinking</li>
-        <li>Leadership</li>
-        <li>Creativity</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('scale-y-100');
+        });
+    </script>
 
 
-    
+    <!-- Main Content -->
+    <main class="pt-32 pb-16 max-w-5xl mx-auto px-6 space-y-16">
+        <!-- Introduction -->
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+            <h2 class="text-3xl font-extrabold text-darknavy mb-4">Behind the Screens: A Bit About Me</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Hey there 👋🏽, I’m <span class="font-semibold">Charuta Shivanee</span> (Charu). I’m passionate about data cleaning, analysis, and deriving insights that drive impactful decisions. With a keen eye for detail and a data-driven mindset, I bridge raw numbers to meaningful narratives.
+            </p>
+        </section>
 
-    <section class="about-section" id="extra">
-      <h2>Extra-curricular Activities</h2>
-      <ul class="activities-list">
-        <li><strong>Volunteer</strong> at the Lost Food Project (2024 - Present)</li>
-        <li><strong>Member</strong> of APU Mauritian Club (2023 - Present)</li>
-        <li><strong>Member</strong> of APU Analytics Club (2024 - Present)</li>
-        <li><strong>Organizer</strong> of a career guidance talk featuring a guest speaker from an animation company (2024)</li>
-        <li><strong>Event Lead & Treasurer</strong> for a fundraising Bingo game event (2023)</li>
-        <li><strong>Recipient</strong> of the International Duke of Edinburgh Bronze Medal (2021)</li>
-        <li><strong>Eco School Club Member</strong> (2019 - 2022): Participated in environmental awareness & Wakashio Oil Spill beach clean-up (2020)</li>
-        <li><strong>Prefect</strong> (2018 - 2019)</li>
-        <li><strong>Class Captain</strong> (2021)</li>
-        <li><strong>Student Council Member</strong> (2022)</li>
-      </ul>
-    </section>
+        <!-- Education -->
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+            <h2 class="text-2xl font-bold text-darknavy mb-6">Education</h2>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold">B.Sc. Computer Science (Data Analytics Specialization)</h3>
+                    <p class="text-gray-700">Asia Pacific University, Malaysia | 2023–2026</p>
+                    <p class="text-gray-600">Relevant: Data Structures, Predictive Modelling, Statistics, Databases, OOP</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">High School Diploma (Commerce)</h3>
+                    <p class="text-gray-700">Forest Side Academy, Mauritius (Cambridge) | 2017–2022</p>
+                    <p class="text-gray-600">Specialized in Mathematics & Statistics, Economics, Accounting</p>
+                </div>
+            </div>
+        </section>
 
-    <!--Beyond Academics and Career-->
-    <section class="about-section" id="beyond">
-      <h2>Outside Tech? Yeah, I Actually Touch Grass..Sometimes</h2>
-      <p>Sure, my skills, experience, and education play a big role in shaping who I am—but let’s be real, they’re not the only things that make me awesome. Beyond all that, I’m an adventure seeker who loves trying new things—whether it’s food, random hobbies, or starting a deep conversation about law or psychology at 2 AM for no reason.</p>
-      <p>I have an unhealthy obsession with crime TV shows—which probably explains my attention to detail and my habit of trying to predict everything before it happens. (Seriously, if data analytics didn’t exist, I’d probably be out solving fake crimes in my head.) But I’m also a risk-taker—as long as the risk isn’t too sketchy. No life-threatening stunts, please.</p>
-      <p>One of my best qualities? I can vibe with just about anyone. Thanks to my international exposure from my education and internship, I’ve met and learned from people of diverse backgrounds, which means I can probably blend in anywhere—put me in a room with strangers, and I’ll walk out with five new best friends and a dinner invite.</p> 
-      <p>I also have a soft spot for volunteering. As a kid, I used to help out at a temple near my house, and even after moving abroad, I kept the spirit alive. In Malaysia, I volunteered for The Lost Food Project and uni events, proving that even between watching crime shows and analyzing data, I can still be a responsible human.</p>
-      <p>Now, for the fun part—my hobbies? I love reading (which sounds intellectual until you realize half my time is spent reading memes), shopping, dancing, and spending quality time with friends. I’d say I’m a bubbly, energetic person who can bring life to any situation—yes, even a Monday morning meeting. If there’s one thing I do well, it’s turning dull moments into legendary ones.</p>
-    </section>
+        <!-- Skills -->
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+            <h2 class="text-2xl font-bold text-darknavy mb-6">Skills</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Technical -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Technical Skills</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex flex-col items-center w-20">
+                            <i class="devicon-r-original text-3xl"></i>
+                            <span class="mt-1 text-sm">R</span>
+                        </div>
+                        <div class="flex flex-col items-center w-20">
+                            <i class="devicon-python-plain text-3xl"></i>
+                            <span class="mt-1 text-sm">Python</span>
+                        </div>
+                        <div class="flex flex-col items-center w-20">
+                            <i class="devicon-java-plain text-3xl"></i>
+                            <span class="mt-1 text-sm">Java</span>
+                        </div>
+                        <div class="flex flex-col items-center w-20">
+                            <i class="devicon-html5-plain text-3xl"></i>
+                            <span class="mt-1 text-sm">HTML5</span>
+                        </div>
+                        <div class="flex flex-col items-center w-20">
+                            <i class="devicon-css3-plain text-3xl"></i>
+                            <span class="mt-1 text-sm">CSS3</span>
+                        </div>
+                        <div class="flex flex-col items-center w-20">
+                            <i class="devicon-javascript-plain text-3xl"></i>
+                            <span class="mt-1 text-sm">JS</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Soft -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Soft Skills</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Teamwork</li>
+                        <li>Communication</li>
+                        <li>Problem-solving</li>
+                        <li>Adaptability</li>
+                        <li>Leadership</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    
-    
-    <!-- Additional content can go here -->
-  </main>
+        <!-- Extra-curricular -->
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+            <h2 class="text-2xl font-bold text-darknavy mb-4">Extra-curricular Activities</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>Volunteer</strong> — Lost Food Project (2024–Present)</li>
+                <li><strong>Member</strong> — APU Mauritian & Analytics Clubs</li>
+                <li><strong>Organizer</strong> — Career Guidance Talk</li>
+                <li><strong>Event Lead & Treasurer</strong> — Fundraising Bingo (2023)</li>
+            </ul>
+        </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
-  </footer>
+        <!-- Beyond Tech -->
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+            <h2 class="text-2xl font-bold text-darknavy mb-4">Outside Tech</h2>
+            <p class="text-gray-700 leading-relaxed">I’m an adventure seeker who loves trying new things — from exploring cuisines to deep 2am chats on psychology. When I'm not analyzing data, I'm watching crime shows, vibing with friends, or volunteering for causes close to my heart.</p>
+        </section>
+    </main>
 
-  <script>
-    const text = "Behind the Screens: A Bit About Me and My Journey";
-    const typewriterElement = document.querySelector('.typewriter-text');
-    let index = 0;
-  
-    function type() {
-      if (index < text.length) {
-        typewriterElement.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 70); // Adjust speed here
-      }
-    }
-  
-    window.addEventListener("load", type);
-  </script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script>
-    ScrollReveal().reveal('.about-section', {
-      scale: 0.8,           // starts at 80% size
-      duration: 1000,
-      delay: 200,
-      easing: 'ease-in-out',
-      distance: '0px',      // no slide, just zoom
-      origin: 'bottom',
-      reset: true           // replays on scroll up
-    });
-  </script>
-  
-  
-  
-
-  
-  
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-700 text-sm">
+        &copy; 2025 Charuta Shivanee. All rights reserved.
+    </footer>
 </body>
 </html>
