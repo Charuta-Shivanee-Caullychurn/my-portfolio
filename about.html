@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Charuta Shivanee — About Me</title>
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
     <!-- Tailwind CSS -->
@@ -24,8 +27,19 @@
             }
         };
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
 </head>
+
 <body class="bg-gradient-to-br from-beige via-softwhite to-mauve font-sans text-gray-800 min-h-screen">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+
     <!-- Navigation -->
     <header class="fixed top-0 left-0 w-full z-50">
         <nav class="flex items-center justify-between px-6 py-4 bg-darknavy bg-opacity-90 backdrop-blur-md shadow-lg">
@@ -74,21 +88,22 @@
     <!-- Main Content -->
     <main class="pt-32 pb-16 max-w-5xl mx-auto px-6 space-y-16">
         <!-- Introduction -->
-        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white" data-aos="fade-up">
             <h2 class="text-3xl font-extrabold text-darknavy mb-4">Behind the Screens: A Bit About Me</h2>
             <p class="text-gray-700 leading-relaxed">
-                Hey there 👋🏽, I’m <span class="font-semibold">Charuta Shivanee</span> (Charu). I’m passionate about data cleaning, analysis, and deriving insights that drive impactful decisions. With a keen eye for detail and a data-driven mindset, I bridge raw numbers to meaningful narratives.
+                Hey there 😃, I’m <span class="font-semibold">Charuta Shivanee</span> (Charu). I’m passionate about data cleaning, analysis, and deriving insights that drive impactful decisions. With a keen eye for detail and a data-driven mindset, I bridge raw numbers to meaningful narratives.
             </p>
+
         </section>
 
         <!-- Education -->
-        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white" data-aos="fade-up">
             <h2 class="text-2xl font-bold text-darknavy mb-6">Education</h2>
             <div class="space-y-6">
                 <div>
                     <h3 class="text-xl font-semibold">B.Sc. Computer Science (Data Analytics Specialization)</h3>
                     <p class="text-gray-700">Asia Pacific University, Malaysia | 2023–2026</p>
-                    <p class="text-gray-600">Relevant: Data Structures, Predictive Modelling, Statistics, Databases, OOP</p>
+                    <p class="text-gray-600">Relevant: Python, Power BI, R Programming, Data Management,Data Structures, Predictive Modelling, Statistics, Databases, OOP</p>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold">High School Diploma (Commerce)</h3>
@@ -99,37 +114,54 @@
         </section>
 
         <!-- Skills -->
-        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white" data-aos="fade-up">
             <h2 class="text-2xl font-bold text-darknavy mb-6">Skills</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Technical -->
                 <div>
                     <h3 class="text-xl font-semibold mb-3">Technical Skills</h3>
                     <div class="flex flex-wrap gap-4">
-                        <div class="flex flex-col items-center w-20">
-                            <i class="devicon-r-original text-3xl"></i>
-                            <span class="mt-1 text-sm">R</span>
-                        </div>
-                        <div class="flex flex-col items-center w-20">
-                            <i class="devicon-python-plain text-3xl"></i>
-                            <span class="mt-1 text-sm">Python</span>
-                        </div>
-                        <div class="flex flex-col items-center w-20">
-                            <i class="devicon-java-plain text-3xl"></i>
-                            <span class="mt-1 text-sm">Java</span>
-                        </div>
-                        <div class="flex flex-col items-center w-20">
-                            <i class="devicon-html5-plain text-3xl"></i>
-                            <span class="mt-1 text-sm">HTML5</span>
-                        </div>
-                        <div class="flex flex-col items-center w-20">
-                            <i class="devicon-css3-plain text-3xl"></i>
-                            <span class="mt-1 text-sm">CSS3</span>
-                        </div>
-                        <div class="flex flex-col items-center w-20">
-                            <i class="devicon-javascript-plain text-3xl"></i>
-                            <span class="mt-1 text-sm">JS</span>
-                        </div>
+                        <div class="hover:scale-110 transition-transform duration-300">
+                            <i class="devicon-python-plain text-5xl text-black"></i>
+                            <p class="mt-2 text-sm font-medium">Python</p>
+                          </div>
+                          
+                          <div class="hover:scale-110 transition-transform duration-300">
+                            <i class="devicon-r-original text-5xl text-grey"></i>
+                            <p class="mt-2 text-sm font-medium">R</p>
+                          </div>
+                      
+                          <div class="hover:scale-110 transition-transform duration-300">
+                            <i class="devicon-java-plain text-5xl text-black"></i>
+                            <p class="mt-2 text-sm font-medium">Java</p>
+                          </div>
+                      
+                          <div class="hover:scale-110 transition-transform duration-300">
+                            <i class="devicon-html5-plain text-5xl text-black"></i>
+                            <p class="mt-2 text-sm font-medium">HTML</p>
+                          </div>
+                      
+                          <div class="hover:scale-110 transition-transform duration-300">
+                            <i class="devicon-css3-plain text-5xl text-black"></i>
+                            <p class="mt-2 text-sm font-medium">CSS</p>
+                          </div>
+                      
+                          <div class="hover:scale-110 transition-transform duration-300">
+                            <i class="devicon-javascript-plain text-5xl text-black"></i>
+                            <p class="mt-2 text-sm font-medium">JavaScript</p>
+                          </div>
+                      
+                          <div class="hover:scale-110 transition-transform duration-300">
+                            <i class="devicon-mysql-plain text-5xl text-black"></i>
+                            <p class="mt-2 text-sm font-medium">MySQL</p>
+                          </div>
+                      
+                          
+                      
+                          <div class="hover:scale-110 transition-transform duration-300">
+                            <i class="devicon-git-plain text-5xl text-black"></i>
+                            <p class="mt-2 text-sm font-medium">Git</p>
+                          </div>
                     </div>
                 </div>
                 <!-- Soft -->
@@ -147,19 +179,22 @@
         </section>
 
         <!-- Extra-curricular -->
-        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white" data-aos="fade-up">
             <h2 class="text-2xl font-bold text-darknavy mb-4">Extra-curricular Activities</h2>
             <ul class="list-disc list-inside text-gray-700 space-y-2">
                 <li><strong>Volunteer</strong> — Lost Food Project (2024–Present)</li>
                 <li><strong>Member</strong> — APU Mauritian & Analytics Clubs</li>
-                <li><strong>Organizer</strong> — Career Guidance Talk</li>
+                <li><strong>Organizer</strong> — Career Guidance Talk (2024)</li>
                 <li><strong>Event Lead & Treasurer</strong> — Fundraising Bingo (2023)</li>
+                <li><strong>International Duke of Edinburgh Award</strong> - Bronze Level (2020-2021)</li>
+                <li><strong>Member</strong> - Forest Side Academy Eco School Club (2018-2020)</li>
+                
             </ul>
         </section>
 
         <!-- Beyond Tech -->
-        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white">
-            <h2 class="text-2xl font-bold text-darknavy mb-4">Outside Tech</h2>
+        <section class="bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-white" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-darknavy mb-4">Outside Tech - Yeah I touch grass sometimes.</h2>
             <p class="text-gray-700 leading-relaxed">I’m an adventure seeker who loves trying new things — from exploring cuisines to deep 2am chats on psychology. When I'm not analyzing data, I'm watching crime shows, vibing with friends, or volunteering for causes close to my heart.</p>
         </section>
     </main>
