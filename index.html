@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Website - Home</title>
-  <!-- You can link your C-->
+    <title>Charu | Data, Technology &amp; Ideas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +16,7 @@
   <header>
     <nav>
       <div class="logo">Charu<span class="emoji">👩🏽‍💻</span></div>  
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
       <ul>
         
         <li><a href="index.html">Home</a></li> 
@@ -33,13 +33,49 @@
 
   <!-- Main Content Area -->
   <main>
-    <div class="hero-text">
-      <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
-      <h1>Charuta Shivanee Caullychurn</h1>
-      <h2>Data Analyst Enthusiast | Business Intelligence | Statistics | Aspiring Front End Developer</h2>
-    <!-- <p>This is the Home page where you'll introduce yourself and give a quick overview of your work.</p> -->
-    <!-- Additional content can go here -->
-     </div>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Hello, I’m Charu</p>
+        <h1>Turning curious questions into <span>clearer possibilities.</span></h1>
+        <p class="lead">Data analyst enthusiast, technology explorer, and aspiring front-end developer interested in the space where insight meets impact.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="projects.html">Explore my work</a>
+          <a class="button button-secondary" href="contact.html">Let’s connect <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-orbit" aria-hidden="true"></div>
+        <img src="images/profile.png" alt="Portrait of Charuta Shivanee Caullychurn" class="profile-pic">
+        <div class="hero-note"><strong>Currently exploring</strong>data, AI, and thoughtful digital experiences</div>
+      </div>
+    </section>
+
+    <section class="reveal" aria-labelledby="focus-title">
+      <div class="section-intro">
+        <div>
+          <p class="section-kicker">A quick snapshot</p>
+          <h2 id="focus-title">A curious mind with a data-driven lens.</h2>
+        </div>
+        <p>I enjoy learning across disciplines and building practical, meaningful solutions from the details.</p>
+      </div>
+      <div class="highlights">
+        <article class="highlight-card">
+          <span class="icon" aria-hidden="true">◌</span>
+          <h3>Data &amp; insight</h3>
+          <p>Cleaning, analysing, and transforming raw information into useful outcomes.</p>
+        </article>
+        <article class="highlight-card">
+          <span class="icon" aria-hidden="true">✦</span>
+          <h3>Technology</h3>
+          <p>Growing a foundation across programming, business intelligence, and front-end development.</p>
+        </article>
+        <article class="highlight-card">
+          <span class="icon" aria-hidden="true">↗</span>
+          <h3>Always exploring</h3>
+          <p>Curious about new ideas, perspectives, and the questions that lead to better work.</p>
+        </article>
+      </div>
+    </section>
   </main>
   <!--this is to test github-->
 
@@ -48,5 +84,6 @@
     <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
   </footer>
  
+  <script src="script.js"></script>
 </body>
 </html>

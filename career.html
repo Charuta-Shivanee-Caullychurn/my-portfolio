@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Career History - Charuta Shivanee Caullychurn</title>
+  <title>Career | Charu</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,6 +17,7 @@
   <header>
     <nav>
       <div class="logo">Charu<span class="emoji">👩🏽‍💻</span></div> 
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
       <ul>
         
         <li><a href="index.html">Home</a></li>
@@ -32,11 +33,15 @@
 
   <!-- Main Content Area -->
   <main>
-    <h1>Career History</h1>
+    <div class="page-heading reveal">
+      <p class="eyebrow">The journey so far</p>
+      <h1>Career History</h1>
+      <p>Experiences that have helped me connect technology, people, and practical outcomes.</p>
+    </div>
     
     <!-- Timeline Section -->
     <section class="timeline">
-      <div class="timeline-item" >
+      <div class="timeline-item reveal" >
         <div class="timeline-dot"></div>
         <div class="timeline-date">Dec 2024 - Mar 2025</div>
         <div class="timeline-content">
@@ -54,27 +59,7 @@
     <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
   </footer>
 
-  <!-- Simple JavaScript for Tabs -->
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const tab = button.getAttribute('data-tab');
-        tabContents.forEach(content => {
-          content.style.display = content.id === tab ? 'block' : 'none';
-        });
-      });
-    });
-
-    // Show the first tab by default
-    if (tabContents.length > 0) {
-      tabContents.forEach((content, index) => {
-        content.style.display = index === 0 ? 'block' : 'none';
-      });
-    }
-  </script>
+  <script src="script.js"></script>
  
 </body>
 </html>

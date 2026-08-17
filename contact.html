@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Your Name</title>
+  <title>Contact | Charu</title>
   <!-- Link to your CSS file when ready -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,6 +19,7 @@
   <header>
     <nav>
       <div class="logo">Charu<span class="emoji">👩🏽‍💻</span></div> 
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
       <ul>
         
         <li><a href="index.html">Home</a></li>
@@ -35,7 +36,12 @@
   <!-- Main Content -->
   <main>
     <!-- Social Media & Email Section -->
-    <section class="contact-info">
+    <div class="page-heading reveal">
+      <p class="eyebrow">Say hello</p>
+      <h1>Let’s stay in touch.</h1>
+      <p>Networking starts here — follow, message, collaborate!</p>
+    </div>
+    <section class="contact-info reveal">
       <h2>Networking Starts Here - Follow, Message, Collaborate!</h2>
       <ul class="social-links">
         <li>
@@ -72,7 +78,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section class="contact-form">
+    <section class="contact-form reveal">
       <h2>Get in Touch with Me</h2>
       <form action="#" method="post">
         <div class="form-group">
@@ -91,7 +97,7 @@
           <label for="visitor-message">Message:</label>
           <textarea id="visitor-message" name="visitor-message" rows="5"  placeholder="This form section is still under construction haha, you can reach out to me via email or on my socials!!" required></textarea>
         </div>
-        <button type="submit">Send it to me</button>
+        <button class="button button-primary" type="submit">Send it to me</button>
       </form>
     </section>
   </main>
@@ -100,6 +106,7 @@
   <footer>
     <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
   </footer>
+  <script src="script.js"></script>
   
 </body>
 </html>
