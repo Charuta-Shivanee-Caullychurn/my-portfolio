@@ -19,5 +19,8 @@
   "devDependencies": {
     "tailwindcss": "^4.1.4"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "serve": "^14.2.6"
+  }
 }
