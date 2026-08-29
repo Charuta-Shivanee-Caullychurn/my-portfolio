@@ -2,15 +2,11 @@
 
 ## Project overview
 
-This is a static multi-page personal portfolio for Charuta Shivanee Caullychurn. It uses semantic HTML, a shared `style.css`, and a small `script.js` for navigation, scroll reveal, and existing external-link interactions. The site is served with `serve` on port 5000.
+This is a responsive, single-page personal portfolio for Charuta Shivanee Caullychurn. It uses semantic HTML, a shared `style.css`, and a small `script.js` for anchor navigation, scroll spy, reveal motion, pointer interaction, and external-link interactions. The site is served with `serve` on port 5000.
 
 Main pages:
-- `index.html` — hero and portfolio overview
-- `about.html` — biography, education, skills, activities, and interests
-- `projects.html` — project showcase
-- `career.html` — career timeline
-- `blog.html` — blog links
-- `contact.html` — social links and contact form
+- `index.html` — the complete scrolling experience: hero, about, education, skills, projects, career, blog, and contact
+- `about.html`, `projects.html`, `career.html`, `blog.html`, `contact.html` — retained legacy page entry points that link back to the single-page experience
 
 ## User preferences
 

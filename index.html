@@ -3,44 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Charu | Data, Technology &amp; Ideas</title>
+  <meta name="description" content="The personal portfolio of Charuta Shivanee Caullychurn — data, technology, and thoughtful digital experiences." />
+  <title>Charu | Data, Technology &amp; Ideas</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div class="logo-container">
-    <a href="index.html">
-      <!--<img src="images/logo.png" alt="Your Logo" class="logo"> -->
-    </a>
-  </div>
-  <!-- Header & Navigation -->
   <header>
-    <nav>
-      <div class="logo">Charu<span class="emoji">👩🏽‍💻</span></div>  
+    <nav aria-label="Main navigation">
+      <a class="logo" href="#home" aria-label="Charu home">Charu<span class="emoji">👩🏽‍💻</span></a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
       <ul>
-        
-        <li><a href="index.html">Home</a></li> 
-        <li><a href="about.html">About Me</a></li>
-        
-       
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="career.html">Career History</a></li>
-        <li><a href="blog.html">My Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home" class="active" aria-current="page">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#career">Career History</a></li>
+        <li><a href="#blog">My Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>  
+    </nav>
   </header>
 
-  <!-- Main Content Area -->
   <main>
-    <section class="hero">
+    <section class="hero page-section" id="home" data-section>
       <div class="hero-copy reveal">
         <p class="eyebrow">Hello, I’m Charu</p>
         <h1>Turning curious questions into <span>clearer possibilities.</span></h1>
         <p class="lead">Data analyst enthusiast, technology explorer, and aspiring front-end developer interested in the space where insight meets impact.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="projects.html">Explore my work</a>
-          <a class="button button-secondary" href="contact.html">Let’s connect <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="#projects">Explore my work</a>
+          <a class="button button-secondary" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
         </div>
       </div>
       <div class="hero-visual reveal">
@@ -50,7 +44,7 @@
       </div>
     </section>
 
-    <section class="reveal" aria-labelledby="focus-title">
+    <section class="page-section reveal" aria-labelledby="focus-title">
       <div class="section-intro">
         <div>
           <p class="section-kicker">A quick snapshot</p>
@@ -76,14 +70,200 @@
         </article>
       </div>
     </section>
-  </main>
-  <!--this is to test github-->
 
-  <!-- Footer -->
+    <section class="page-section" id="about" data-section aria-labelledby="about-title">
+      <div class="page-heading reveal">
+        <p class="eyebrow">A little context</p>
+        <h2 id="about-title">Behind the screens</h2>
+        <p>The short version of my journey, interests, and the things that keep me curious.</p>
+      </div>
+
+      <article class="about-section about-intro reveal" id="this-is-me">
+        <div>
+          <p class="section-kicker">This is me</p>
+          <h2>The short version of my life story.</h2>
+        </div>
+        <div>
+          <p>I’m a curious person who somehow ended up turning my love for figuring things out into a career in tech. With a background in Computer Science and Data Analytics, I’m currently exploring software development, data, and AI, while constantly finding new things to be fascinated by. Outside the world of code and dashboards, I have a slightly unhealthy level of curiosity about economics, entrepreneurship, business, real estate, and how countries and societies actually work. I enjoy learning, building, questioning things, and occasionally going down internet rabbit holes that started with one simple question. Ultimately, I’m someone who enjoys turning curiosity into ideas and ideas into something useful.</p>
+          <ul class="tag-list" aria-label="Areas of interest">
+            <li>Data &amp; AI</li>
+            <li>Technology</li>
+            <li>Business &amp; entrepreneurship</li>
+            <li>Economics</li>
+            <li>Learning &amp; exploration</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="about-grid">
+        <article class="about-section reveal">
+          <p class="section-kicker">The foundation</p>
+          <h2>Education</h2>
+          <div class="education-item">
+            <h3>Bachelor’s Degree in Computer Science (Data Analytics Specialization)</h3>
+            <p><strong>Asia Pacific University, Malaysia</strong> · 2023 - 2026</p>
+            <p>Data Structures, Programming for Data Analytics, Data Mining and Predictive Modelling, Statistics, Databases, Object-Oriented Programming</p>
+          </div>
+          <div class="education-item">
+            <h3>High School Diploma</h3>
+            <p><strong>Forest Side Academy, Mauritius</strong> · 2017 - 2022</p>
+            <p>Commerce (Mathematics &amp; Statistics, Economics, Accounting)</p>
+          </div>
+        </article>
+
+        <article class="about-section reveal">
+          <p class="section-kicker">What I bring</p>
+          <h2>Soft skills</h2>
+          <ul class="soft-skills">
+            <li>Teamwork</li>
+            <li>Independent Worker</li>
+            <li>Communication</li>
+            <li>Interpersonal Skills</li>
+            <li>Problem-solving</li>
+            <li>Time Management</li>
+            <li>Adaptability</li>
+            <li>Critical Thinking</li>
+            <li>Leadership</li>
+            <li>Creativity</li>
+          </ul>
+        </article>
+      </div>
+
+      <article class="about-section reveal" id="skills">
+        <div class="section-intro">
+          <div>
+            <p class="section-kicker">Tools of the trade</p>
+            <h2>Skills</h2>
+          </div>
+          <p>A growing toolkit for exploring ideas, patterns, and useful outcomes.</p>
+        </div>
+        <div class="skills-container">
+          <div class="skills-category">
+            <h3>Technical skills</h3>
+            <div class="icon-grid">
+              <div class="skill-icon"><i class="devicon-r-original colored" aria-hidden="true"></i><span>R</span></div>
+              <div class="skill-icon"><i class="devicon-python-plain colored" aria-hidden="true"></i><span>Python</span></div>
+              <div class="skill-icon"><i class="devicon-java-plain colored" aria-hidden="true"></i><span>Java</span></div>
+              <div class="skill-icon"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML</span></div>
+              <div class="skill-icon"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span>CSS</span></div>
+              <div class="skill-icon"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span>JavaScript</span></div>
+              <div class="skill-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/SAS_logo.svg/512px-SAS_logo.svg.png" alt="SAS Studio" class="custom-icon"><span>SAS</span></div>
+              <div class="skill-icon"><i class="devicon-microsoftsqlserver-plain colored" aria-hidden="true"></i><span>SQL</span></div>
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tableau.svg" alt="Tableau" class="custom-icon"><span>Tableau</span></div>
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/powerbi.svg" alt="Power BI" class="custom-icon"><span>Power BI</span></div>
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftoffice.svg" alt="Microsoft Office" class="custom-icon"><span>Office</span></div>
+              <div class="skill-icon"><i class="devicon-mysql-plain colored" aria-hidden="true"></i><span>Databases</span></div>
+              <div class="skill-icon"><span class="skill-mark axway-mark" aria-hidden="true">AX</span><span>AXWAY</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="about-section reveal">
+        <p class="section-kicker">Beyond the classroom</p>
+        <h2>Extra-curricular activities</h2>
+        <ul class="activities-list compact-list">
+          <li><strong>Volunteer</strong> at the Lost Food Project (2024 - Present)</li>
+          <li><strong>Member</strong> of APU Mauritian Club (2023 - Present)</li>
+          <li><strong>Member</strong> of APU Analytics Club (2024 - Present)</li>
+          <li><strong>Organizer</strong> of a career guidance talk and <strong>Event Lead &amp; Treasurer</strong> for a fundraising Bingo game event</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="page-section" id="projects" data-section aria-labelledby="projects-title">
+      <div class="page-heading reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2 id="projects-title">Projects</h2>
+        <p>A few things I’ve built while learning, experimenting, and turning ideas into working experiences.</p>
+      </div>
+      <div class="project-container">
+        <article class="project-card reveal" role="link" tabindex="0" data-url="https://github.com/Charuta-Shivanee-Caullychurn/my-portfolio">
+          <img src="images/blog1.jpg" alt="Portfolio project preview">
+          <div class="card-body"><h3>Portfolio</h3><p>Tech Stack: HTML, CSS, JavaScript</p><span class="card-arrow">View on GitHub ↗</span></div>
+        </article>
+        <article class="project-card reveal" role="link" tabindex="0" data-url="https://github.com/Charuta-Shivanee-Caullychurn/Fruit_Factory-Simulation">
+          <img src="images/blog1.avif" alt="Fruit factory simulation project preview">
+          <div class="card-body"><h3>Simulation for fruit factory</h3><p>Tech Stack: Java, Concurrency concepts</p><span class="card-arrow">View on GitHub ↗</span></div>
+        </article>
+        <article class="project-card reveal" role="link" tabindex="0" data-url="https://github.com/Charuta-Shivanee-Caullychurn/Fruit_Factory-Simulation">
+          <img src="images/blog1.avif" alt="Machine learning water classification project preview">
+          <div class="card-body"><h3>Multi-Class Water Classification using Machine Learning (with Integrated Real-Time Detection System)</h3><p>Tech Stack: Python, Streamlit</p><span class="card-arrow">View on GitHub ↗</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" id="career" data-section aria-labelledby="career-title">
+      <div class="page-heading reveal">
+        <p class="eyebrow">The journey so far</p>
+        <h2 id="career-title">Career History</h2>
+        <p>Experiences that have helped me connect technology, people, and practical outcomes.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Dec 2024 - Mar 2025</div>
+          <div class="timeline-content">
+            <h3>Intern - West Malayan Group Sdn Bhd (Malaysia)</h3>
+            <p>Contributed to digital transformation and analytics-driven decision-making. Involved in automating reports and optimizing file storage processes.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" id="blog" data-section aria-labelledby="blog-title">
+      <div class="page-heading reveal">
+        <p class="eyebrow">Notes &amp; reflections</p>
+        <h2 id="blog-title">My Blog</h2>
+        <p>Thoughts on learning, coding, and the moments in between.</p>
+      </div>
+      <div class="blog-container">
+        <article class="blog-card reveal" role="link" tabindex="0" data-url="https://medium.com/@shivanycaully/to-everyone-who-feels-like-theyll-never-get-coding-this-is-for-you-d32a60d7e015">
+          <img src="images/blog1.jpg" alt="Coding blog post preview">
+          <div class="card-body"><h3>To Everyone Who Feels Like They'll Never Get Coding- This Is For You</h3><p>A note for anyone learning something new and feeling a little behind.</p><span class="card-arrow">Read the article ↗</span></div>
+        </article>
+        <article class="blog-card reveal" role="link" tabindex="0" data-url="https://medium.com/your-second-article-link">
+          <img src="images/blog1.avif" alt="Upcoming blog post preview">
+          <div class="card-body"><h3>Coming Soon</h3><p>Stay tuned for more blog posts!</p><span class="card-arrow">More soon ↗</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" id="contact" data-section aria-labelledby="contact-title">
+      <div class="page-heading reveal">
+        <p class="eyebrow">Say hello</p>
+        <h2 id="contact-title">Let’s stay in touch.</h2>
+        <p>Networking starts here — follow, message, collaborate!</p>
+      </div>
+      <div class="contact-layout">
+        <section class="contact-info reveal">
+          <h3>Find me around the web</h3>
+          <ul class="social-links">
+            <li><a href="https://www.instagram.com/shi.vanille/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://discord.com/users/yourdiscordid" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/charuta-shivanee-caullychurn-793390188/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/Charuta-Shivanee-Caullychurn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+            <li><a href="mailto:charuta.shivanee@gmail.com" aria-label="Email Charuta"><i class="fas fa-envelope"></i></a></li>
+          </ul>
+        </section>
+        <section class="contact-form reveal">
+          <h3>Get in touch with me</h3>
+          <form action="#" method="post">
+            <div class="form-group"><label for="visitor-name">Name</label><input type="text" id="visitor-name" name="visitor-name" placeholder="Anna Lee" required></div>
+            <div class="form-group"><label for="visitor-email">Email</label><input type="email" id="visitor-email" name="visitor-email" placeholder="annalee@mail.com" required></div>
+            <div class="form-group"><label for="contact-reason">Reason to contact</label><input type="text" id="contact-reason" name="contact-reason" placeholder="Basically a subject" required></div>
+            <div class="form-group"><label for="visitor-message">Message</label><textarea id="visitor-message" name="visitor-message" rows="5" placeholder="Tell me what’s on your mind..." required></textarea></div>
+            <button class="button button-primary" type="submit">Send it to me</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p>&copy; 2025 Charuta Shivanee Caullychurn. All rights reserved.</p>
+    <p>&copy; <span data-year>2025</span> Charuta Shivanee Caullychurn. All rights reserved.</p>
   </footer>
- 
   <script src="script.js"></script>
 </body>
 </html>
