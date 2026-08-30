@@ -573,7 +573,6 @@ p { color: var(--muted); }
   padding: 0.4rem 0.2rem 1.25rem;
   overscroll-behavior-inline: contain;
   scroll-behavior: auto;
-  scroll-snap-type: x proximity;
   scrollbar-color: rgba(115, 87, 255, 0.4) transparent;
   scrollbar-width: thin;
 }

@@ -79,6 +79,7 @@
     let paused = reduceMotion;
     let animationFrame;
     let previousTime = 0;
+    let scrollOffset = carousel.scrollLeft;
 
     const setPaused = (nextPaused) => {
       paused = nextPaused;
@@ -104,23 +105,27 @@
       const elapsed = Math.min(time - previousTime, 40);
       previousTime = time;
       if (!paused && carousel.scrollWidth > carousel.clientWidth * 1.05) {
-        carousel.scrollLeft += elapsed * 0.028;
-        if (carousel.scrollLeft >= carousel.scrollWidth / 2) carousel.scrollLeft -= carousel.scrollWidth / 2;
+        const loopWidth = carousel.scrollWidth / 2;
+        scrollOffset += elapsed * 0.04;
+        if (scrollOffset >= loopWidth) scrollOffset -= loopWidth;
+        carousel.scrollLeft = scrollOffset;
       }
       animationFrame = window.requestAnimationFrame(animate);
     };
 
     if (!reduceMotion) animationFrame = window.requestAnimationFrame(animate);
 
-    carousel.addEventListener('mouseenter', () => setPaused(true));
-    carousel.addEventListener('mouseleave', () => {
-      if (!carousel.querySelector('.is-selected')) setPaused(false);
+    carousel.addEventListener('pointerdown', () => {
+      scrollOffset = carousel.scrollLeft;
+      setPaused(true);
     });
-    carousel.addEventListener('pointerdown', () => setPaused(true));
     carousel.addEventListener('pointerup', () => {
       if (!carousel.querySelector('.is-selected')) window.setTimeout(() => setPaused(false), 900);
     });
-    carousel.addEventListener('focusin', () => setPaused(true));
+    carousel.addEventListener('focusin', () => {
+      scrollOffset = carousel.scrollLeft;
+      setPaused(true);
+    });
     carousel.addEventListener('focusout', (event) => {
       if (!carousel.contains(event.relatedTarget) && !carousel.querySelector('.is-selected')) setPaused(false);
     });
