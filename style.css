@@ -35,9 +35,38 @@ body {
 .ambient-motion {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
+}
+
+.ambient-motion::before,
+.ambient-motion::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+}
+
+.ambient-motion::before {
+  top: 14%;
+  left: 38%;
+  width: min(42vw, 520px);
+  height: min(42vw, 520px);
+  border-radius: 42% 58% 56% 44%;
+  background: radial-gradient(circle at 35% 30%, rgba(115, 87, 255, 0.11), rgba(115, 87, 255, 0) 68%);
+  filter: blur(8px);
+  animation: background-drift 24s ease-in-out infinite alternate;
+}
+
+.ambient-motion::after {
+  right: -7%;
+  bottom: 9%;
+  width: 22rem;
+  height: 22rem;
+  border: 1px solid rgba(54, 182, 172, 0.1);
+  border-radius: 48% 52% 40% 60%;
+  transform: rotate(18deg);
+  animation: background-drift 19s ease-in-out infinite alternate-reverse;
 }
 
 .motion-orb,
@@ -117,6 +146,13 @@ body::after {
   bottom: 3%;
   background: rgba(54, 182, 172, 0.2);
   animation: drift 24s ease-in-out infinite alternate-reverse;
+}
+
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 main {
@@ -647,11 +683,59 @@ body > main > h1:not(.page-heading h1) { text-align: center; }
 footer { padding: 1.5rem 20px; border-top: 1px solid var(--line); text-align: center; background: rgba(255,255,255,0.45); }
 footer p { margin: 0; font-size: 0.8rem; }
 
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(-100px, -100px, 0);
+  transition: opacity 0.25s ease;
+}
+.custom-cursor.is-visible { opacity: 1; }
+.custom-cursor-pointer {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 34px;
+  height: 34px;
+  background: url('attached_assets/image_1788065806397.png') center / contain no-repeat;
+  filter: drop-shadow(0 5px 9px rgba(58, 93, 218, 0.32));
+  transform: rotate(-8deg);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.custom-cursor-ring {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(115, 87, 255, 0.28);
+  border-radius: 50%;
+  transform: scale(0.65);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.custom-cursor.is-interactive .custom-cursor-pointer {
+  filter: drop-shadow(0 7px 12px rgba(58, 93, 218, 0.44));
+  transform: rotate(-8deg) scale(0.82);
+}
+.custom-cursor.is-interactive .custom-cursor-ring {
+  border-color: rgba(115, 87, 255, 0.48);
+  background: rgba(115, 87, 255, 0.06);
+  transform: scale(1);
+}
+.custom-cursor.is-active .custom-cursor-pointer { transform: rotate(-8deg) scale(0.68); }
+.custom-cursor.is-active .custom-cursor-ring { transform: scale(0.82); }
+
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 @keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(30px, -22px, 0); } }
 @keyframes float { 0%, 100% { transform: rotate(18deg) translate3d(0, 0, 0); } 50% { transform: rotate(25deg) translate3d(8px, -14px, 0); } }
+@keyframes background-drift { 0% { transform: translate3d(-5%, -2%, 0) rotate(0deg) scale(0.96); } 50% { transform: translate3d(10%, 7%, 0) rotate(9deg) scale(1.04); } 100% { transform: translate3d(-4%, 12%, 0) rotate(-7deg) scale(1); } }
 @keyframes float-orb-one { from { transform: translate3d(-10px, 12px, 0) scale(0.85); } to { transform: translate3d(38px, -34px, 0) scale(1.1); } }
 @keyframes float-orb-two { from { transform: translate3d(18px, -6px, 0); } to { transform: translate3d(-28px, 30px, 0) scale(0.78); } }
 @keyframes float-ring { from { transform: translate3d(0, 0, 0) rotate(0deg); } to { transform: translate3d(-24px, -34px, 0) rotate(360deg); } }
@@ -691,4 +775,18 @@ footer p { margin: 0; font-size: 0.8rem; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"] { cursor: none; }
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea { cursor: text; }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor { display: none; }
 }

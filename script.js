@@ -74,6 +74,43 @@
   }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+  if (finePointer && !reduceMotion) {
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    cursor.innerHTML = '<span class="custom-cursor-pointer"></span><span class="custom-cursor-ring"></span>';
+    document.body.appendChild(cursor);
+    document.documentElement.classList.add('has-custom-cursor');
+
+    let targetX = -100;
+    let targetY = -100;
+    let currentX = targetX;
+    let currentY = targetY;
+
+    const moveCursor = (event) => {
+      targetX = event.clientX - 10;
+      targetY = event.clientY - 10;
+      cursor.classList.add('is-visible');
+      const interactive = event.target.closest('a, button, [role="button"], input, textarea, select');
+      cursor.classList.toggle('is-interactive', Boolean(interactive));
+    };
+
+    const animateCursor = () => {
+      currentX += (targetX - currentX) * 0.22;
+      currentY += (targetY - currentY) * 0.22;
+      cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      window.requestAnimationFrame(animateCursor);
+    };
+
+    document.addEventListener('pointermove', moveCursor, { passive: true });
+    document.addEventListener('pointerdown', () => cursor.classList.add('is-active'));
+    document.addEventListener('pointerup', () => cursor.classList.remove('is-active'));
+    document.addEventListener('pointerleave', () => cursor.classList.remove('is-visible'));
+    window.requestAnimationFrame(animateCursor);
+  }
+
   document.querySelectorAll('.project-container, .blog-container').forEach((carousel) => {
     const cards = Array.from(carousel.querySelectorAll('.project-card, .blog-card'));
     let paused = reduceMotion;
