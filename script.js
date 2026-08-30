@@ -26,6 +26,41 @@
     });
   }
 
+  const themeKey = 'charu-theme';
+  const storedTheme = window.localStorage.getItem(themeKey);
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = storedTheme === 'dark' || storedTheme === 'light'
+    ? storedTheme
+    : (systemPrefersDark ? 'dark' : 'light');
+  const themeToggle = document.createElement('button');
+  const themeControl = document.createElement('li');
+  const themeIcon = document.createElement('span');
+  const themeLabel = document.createElement('span');
+  themeControl.className = 'theme-control';
+  themeToggle.className = 'theme-toggle';
+  themeIcon.className = 'theme-icon';
+  themeIcon.setAttribute('aria-hidden', 'true');
+  themeToggle.append(themeIcon, themeLabel);
+  themeControl.appendChild(themeToggle);
+  if (navMenu) navMenu.appendChild(themeControl);
+
+  const updateTheme = (theme) => {
+    const isDark = theme === 'dark';
+    document.documentElement.dataset.theme = theme;
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    themeToggle.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    themeIcon.textContent = isDark ? '☼' : '☾';
+    themeLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
+  };
+
+  updateTheme(initialTheme);
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    window.localStorage.setItem(themeKey, nextTheme);
+    updateTheme(nextTheme);
+  });
+
   const navLinks = document.querySelectorAll('header nav a');
   const sections = document.querySelectorAll('[data-section]');
 
