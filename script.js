@@ -73,15 +73,83 @@
     revealItems.forEach((item) => item.classList.add('is-visible'));
   }
 
-  document.querySelectorAll('[data-url]').forEach((card) => {
-    const openCard = () => openBlog(card.dataset.url);
-    card.addEventListener('click', openCard);
-    card.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openCard();
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.project-container, .blog-container').forEach((carousel) => {
+    const cards = Array.from(carousel.querySelectorAll('.project-card, .blog-card'));
+    let paused = reduceMotion;
+    let animationFrame;
+    let previousTime = 0;
+
+    const setPaused = (nextPaused) => {
+      paused = nextPaused;
+      carousel.classList.toggle('is-paused', paused);
+    };
+
+    if (cards.length > 1 && !reduceMotion) {
+      cards.forEach((card) => {
+        const clone = card.cloneNode(true);
+        clone.dataset.clone = 'true';
+        clone.setAttribute('aria-hidden', 'true');
+        clone.removeAttribute('tabindex');
+        clone.classList.remove('reveal');
+        clone.classList.add('is-visible');
+        clone.querySelectorAll('[tabindex]').forEach((element) => element.removeAttribute('tabindex'));
+        clone.querySelectorAll('a').forEach((link) => link.setAttribute('tabindex', '-1'));
+        carousel.appendChild(clone);
+      });
+    }
+
+    const animate = (time) => {
+      if (!previousTime) previousTime = time;
+      const elapsed = Math.min(time - previousTime, 40);
+      previousTime = time;
+      if (!paused && carousel.scrollWidth > carousel.clientWidth * 1.05) {
+        carousel.scrollLeft += elapsed * 0.028;
+        if (carousel.scrollLeft >= carousel.scrollWidth / 2) carousel.scrollLeft -= carousel.scrollWidth / 2;
       }
+      animationFrame = window.requestAnimationFrame(animate);
+    };
+
+    if (!reduceMotion) animationFrame = window.requestAnimationFrame(animate);
+
+    carousel.addEventListener('mouseenter', () => setPaused(true));
+    carousel.addEventListener('mouseleave', () => {
+      if (!carousel.querySelector('.is-selected')) setPaused(false);
     });
+    carousel.addEventListener('pointerdown', () => setPaused(true));
+    carousel.addEventListener('pointerup', () => {
+      if (!carousel.querySelector('.is-selected')) window.setTimeout(() => setPaused(false), 900);
+    });
+    carousel.addEventListener('focusin', () => setPaused(true));
+    carousel.addEventListener('focusout', (event) => {
+      if (!carousel.contains(event.relatedTarget) && !carousel.querySelector('.is-selected')) setPaused(false);
+    });
+
+    cards.forEach((card) => {
+      const toggleCard = () => {
+        const shouldPause = !card.classList.contains('is-selected');
+        carousel.querySelectorAll('.is-selected').forEach((selected) => {
+          selected.classList.remove('is-selected');
+          selected.setAttribute('aria-pressed', 'false');
+        });
+        card.classList.toggle('is-selected', shouldPause);
+        card.setAttribute('aria-pressed', String(shouldPause));
+        setPaused(shouldPause);
+      };
+
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('a')) return;
+        toggleCard();
+      });
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleCard();
+        }
+      });
+    });
+
+    window.addEventListener('pagehide', () => window.cancelAnimationFrame(animationFrame), { once: true });
   });
 
   const contactForm = document.querySelector('.contact-form form');

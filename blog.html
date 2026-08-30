@@ -39,23 +39,22 @@
       <p>Thoughts on learning, coding, and the moments in between.</p>
     </div>
 
-    <div class="blog-container">
+    <div class="carousel-shell">
+      <div class="carousel-hint"><span class="carousel-status-dot"></span>Auto-scrolling · click a post to pause</div>
+      <div class="blog-container" role="region" aria-label="Blog posts, horizontally scrolling">
       <!-- Example Blog Post -->
-      <article class="blog-card reveal" role="link" tabindex="0" onclick="openBlog('https://medium.com/@shivanycaully/to-everyone-who-feels-like-theyll-never-get-coding-this-is-for-you-d32a60d7e015')" onkeydown="if(event.key==='Enter') openBlog('https://medium.com/@shivanycaully/to-everyone-who-feels-like-theyll-never-get-coding-this-is-for-you-d32a60d7e015')">
+      <article class="blog-card reveal" role="button" tabindex="0" aria-pressed="false">
         <img src="images/blog1.jpg" alt="Coding blog post preview">
-        <h2>To Everyone Who Feels Like They'll Never Get Coding- This Is For You</h2>
-        <p>A note for anyone learning something new and feeling a little behind.</p>
-        <span class="card-arrow">Read the article ↗</span>
+        <div class="card-body"><h3>To Everyone Who Feels Like They'll Never Get Coding- This Is For You</h3><p>A note for anyone learning something new and feeling a little behind.</p><a class="card-arrow" href="https://medium.com/@shivanycaully/to-everyone-who-feels-like-theyll-never-get-coding-this-is-for-you-d32a60d7e015" target="_blank" rel="noopener noreferrer">Read the article ↗</a></div>
       </article>
 
-      <article class="blog-card reveal" role="link" tabindex="0" onclick="openBlog('https://medium.com/your-second-article-link')" onkeydown="if(event.key==='Enter') openBlog('https://medium.com/your-second-article-link')">
+      <article class="blog-card reveal" role="button" tabindex="0" aria-pressed="false">
         <img src="images/blog1.avif" alt="Upcoming blog post preview">
-        <h2>Coming Soon</h2>
-        <p>Stay tuned for more blog posts!</p>
-        <span class="card-arrow">More soon ↗</span>
+        <div class="card-body"><h3>Everyday problems in Mauritius that could be solved with technology</h3><p>Here are 5 everyday Mauritian problems that technology could fix; some already being solved, some still waiting. Grab your dholl puri. This one hits close to home.</p><a class="card-arrow" href="https://medium.com/@shivanycaully/mauritius-3395fd9b2a1b?sharedUserId=shivanycaully" target="_blank" rel="noopener noreferrer">Read on Medium ↗</a></div>
       </article>
 
       <!-- Add more blog cards as needed -->
+      </div>
     </div>
   </main>
 
