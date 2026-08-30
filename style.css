@@ -642,6 +642,7 @@ body > main > h1:not(.page-heading h1) { text-align: center; }
 .form-group textarea:focus { outline: 2px solid rgba(115, 87, 255, 0.25); border-color: var(--accent); }
 .contact-form button { justify-self: start; border: 0; cursor: pointer; }
 .form-status { min-height: 1.4em; margin: 0; color: var(--accent-strong); font-size: 0.82rem; }
+.honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
 footer { padding: 1.5rem 20px; border-top: 1px solid var(--line); text-align: center; background: rgba(255,255,255,0.45); }
 footer p { margin: 0; font-size: 0.8rem; }
