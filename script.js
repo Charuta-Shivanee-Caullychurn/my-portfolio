@@ -133,8 +133,9 @@
     };
 
     const animateCursor = () => {
-      currentX += (targetX - currentX) * 0.22;
-      currentY += (targetY - currentY) * 0.22;
+      // Keep the easing visible without letting the pointer trail too far behind.
+      currentX += (targetX - currentX) * 0.48;
+      currentY += (targetY - currentY) * 0.48;
       cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
       window.requestAnimationFrame(animateCursor);
     };
